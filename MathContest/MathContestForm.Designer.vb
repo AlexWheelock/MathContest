@@ -287,8 +287,10 @@ Partial Class MathContestForm
         ' 
         ' MathContestForm
         ' 
+        AcceptButton = SubmitButton
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
+        CancelButton = ExitButton
         ClientSize = New Size(564, 330)
         Controls.Add(StudentInformationGroupBox)
         Controls.Add(CurrentMathProblemGroupBox)
