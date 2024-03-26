@@ -54,47 +54,53 @@ Partial Class MathContestForm
         ' 
         ' NameTextBox
         ' 
-        NameTextBox.Location = New Point(6, 57)
+        NameTextBox.Location = New Point(5, 38)
+        NameTextBox.Margin = New Padding(3, 2, 3, 2)
         NameTextBox.Name = "NameTextBox"
-        NameTextBox.Size = New Size(209, 27)
+        NameTextBox.Size = New Size(183, 23)
         NameTextBox.TabIndex = 0
         ' 
         ' FirstNumberTextBox
         ' 
-        FirstNumberTextBox.Location = New Point(6, 57)
+        FirstNumberTextBox.Location = New Point(5, 43)
+        FirstNumberTextBox.Margin = New Padding(3, 2, 3, 2)
         FirstNumberTextBox.Name = "FirstNumberTextBox"
         FirstNumberTextBox.ReadOnly = True
-        FirstNumberTextBox.Size = New Size(209, 27)
+        FirstNumberTextBox.Size = New Size(183, 23)
         FirstNumberTextBox.TabIndex = 3
         ' 
         ' SecondNumberTextBox
         ' 
-        SecondNumberTextBox.Location = New Point(6, 115)
+        SecondNumberTextBox.Location = New Point(5, 86)
+        SecondNumberTextBox.Margin = New Padding(3, 2, 3, 2)
         SecondNumberTextBox.Name = "SecondNumberTextBox"
         SecondNumberTextBox.ReadOnly = True
-        SecondNumberTextBox.Size = New Size(209, 27)
+        SecondNumberTextBox.Size = New Size(183, 23)
         SecondNumberTextBox.TabIndex = 4
         ' 
         ' StudentAnswerTextBox
         ' 
-        StudentAnswerTextBox.Location = New Point(6, 175)
+        StudentAnswerTextBox.Location = New Point(5, 131)
+        StudentAnswerTextBox.Margin = New Padding(3, 2, 3, 2)
         StudentAnswerTextBox.Name = "StudentAnswerTextBox"
-        StudentAnswerTextBox.Size = New Size(209, 27)
+        StudentAnswerTextBox.Size = New Size(183, 23)
         StudentAnswerTextBox.TabIndex = 5
         ' 
         ' AgeTextBox
         ' 
-        AgeTextBox.Location = New Point(241, 57)
+        AgeTextBox.Location = New Point(211, 38)
+        AgeTextBox.Margin = New Padding(3, 2, 3, 2)
         AgeTextBox.Name = "AgeTextBox"
-        AgeTextBox.Size = New Size(42, 27)
+        AgeTextBox.Size = New Size(37, 23)
         AgeTextBox.TabIndex = 1
         ' 
         ' AddRadioButton
         ' 
         AddRadioButton.AutoSize = True
-        AddRadioButton.Location = New Point(13, 34)
+        AddRadioButton.Location = New Point(11, 26)
+        AddRadioButton.Margin = New Padding(3, 2, 3, 2)
         AddRadioButton.Name = "AddRadioButton"
-        AddRadioButton.Size = New Size(58, 24)
+        AddRadioButton.Size = New Size(47, 19)
         AddRadioButton.TabIndex = 6
         AddRadioButton.TabStop = True
         AddRadioButton.Text = "Add"
@@ -103,9 +109,10 @@ Partial Class MathContestForm
         ' SubtractRadioButton
         ' 
         SubtractRadioButton.AutoSize = True
-        SubtractRadioButton.Location = New Point(13, 64)
+        SubtractRadioButton.Location = New Point(11, 48)
+        SubtractRadioButton.Margin = New Padding(3, 2, 3, 2)
         SubtractRadioButton.Name = "SubtractRadioButton"
-        SubtractRadioButton.Size = New Size(85, 24)
+        SubtractRadioButton.Size = New Size(69, 19)
         SubtractRadioButton.TabIndex = 7
         SubtractRadioButton.TabStop = True
         SubtractRadioButton.Text = "Subtract"
@@ -114,9 +121,10 @@ Partial Class MathContestForm
         ' MultiplyRadioButton
         ' 
         MultiplyRadioButton.AutoSize = True
-        MultiplyRadioButton.Location = New Point(13, 94)
+        MultiplyRadioButton.Location = New Point(11, 70)
+        MultiplyRadioButton.Margin = New Padding(3, 2, 3, 2)
         MultiplyRadioButton.Name = "MultiplyRadioButton"
-        MultiplyRadioButton.Size = New Size(84, 24)
+        MultiplyRadioButton.Size = New Size(69, 19)
         MultiplyRadioButton.TabIndex = 8
         MultiplyRadioButton.TabStop = True
         MultiplyRadioButton.Text = "Multiply"
@@ -125,9 +133,10 @@ Partial Class MathContestForm
         ' DivideRadioButton
         ' 
         DivideRadioButton.AutoSize = True
-        DivideRadioButton.Location = New Point(13, 124)
+        DivideRadioButton.Location = New Point(11, 93)
+        DivideRadioButton.Margin = New Padding(3, 2, 3, 2)
         DivideRadioButton.Name = "DivideRadioButton"
-        DivideRadioButton.Size = New Size(73, 24)
+        DivideRadioButton.Size = New Size(58, 19)
         DivideRadioButton.TabIndex = 9
         DivideRadioButton.TabStop = True
         DivideRadioButton.Text = "Divide"
@@ -135,36 +144,40 @@ Partial Class MathContestForm
         ' 
         ' SubmitButton
         ' 
-        SubmitButton.Location = New Point(6, 26)
+        SubmitButton.Location = New Point(4, 17)
+        SubmitButton.Margin = New Padding(3, 2, 3, 2)
         SubmitButton.Name = "SubmitButton"
-        SubmitButton.Size = New Size(142, 58)
+        SubmitButton.Size = New Size(124, 44)
         SubmitButton.TabIndex = 10
         SubmitButton.Text = "Submit"
         SubmitButton.UseVisualStyleBackColor = True
         ' 
         ' ClearButton
         ' 
-        ClearButton.Location = New Point(6, 90)
+        ClearButton.Location = New Point(4, 65)
+        ClearButton.Margin = New Padding(3, 2, 3, 2)
         ClearButton.Name = "ClearButton"
-        ClearButton.Size = New Size(142, 58)
+        ClearButton.Size = New Size(124, 44)
         ClearButton.TabIndex = 11
         ClearButton.Text = "Clear"
         ClearButton.UseVisualStyleBackColor = True
         ' 
         ' SummaryButton
         ' 
-        SummaryButton.Location = New Point(6, 154)
+        SummaryButton.Location = New Point(5, 113)
+        SummaryButton.Margin = New Padding(3, 2, 3, 2)
         SummaryButton.Name = "SummaryButton"
-        SummaryButton.Size = New Size(142, 58)
+        SummaryButton.Size = New Size(124, 44)
         SummaryButton.TabIndex = 12
         SummaryButton.Text = "Summary"
         SummaryButton.UseVisualStyleBackColor = True
         ' 
         ' ExitButton
         ' 
-        ExitButton.Location = New Point(6, 218)
+        ExitButton.Location = New Point(5, 161)
+        ExitButton.Margin = New Padding(3, 2, 3, 2)
         ExitButton.Name = "ExitButton"
-        ExitButton.Size = New Size(142, 58)
+        ExitButton.Size = New Size(124, 44)
         ExitButton.TabIndex = 13
         ExitButton.Text = "Exit"
         ExitButton.UseVisualStyleBackColor = True
@@ -177,9 +190,11 @@ Partial Class MathContestForm
         StudentInformationGroupBox.Controls.Add(GradeTextBox)
         StudentInformationGroupBox.Controls.Add(NameTextBox)
         StudentInformationGroupBox.Controls.Add(AgeTextBox)
-        StudentInformationGroupBox.Location = New Point(12, 12)
+        StudentInformationGroupBox.Location = New Point(10, 9)
+        StudentInformationGroupBox.Margin = New Padding(3, 2, 3, 2)
         StudentInformationGroupBox.Name = "StudentInformationGroupBox"
-        StudentInformationGroupBox.Size = New Size(380, 91)
+        StudentInformationGroupBox.Padding = New Padding(3, 2, 3, 2)
+        StudentInformationGroupBox.Size = New Size(332, 68)
         StudentInformationGroupBox.TabIndex = 14
         StudentInformationGroupBox.TabStop = False
         StudentInformationGroupBox.Text = "Student Information"
@@ -187,35 +202,36 @@ Partial Class MathContestForm
         ' GradeLabel
         ' 
         GradeLabel.AutoSize = True
-        GradeLabel.Location = New Point(309, 34)
+        GradeLabel.Location = New Point(271, 21)
         GradeLabel.Name = "GradeLabel"
-        GradeLabel.Size = New Size(49, 20)
+        GradeLabel.Size = New Size(38, 15)
         GradeLabel.TabIndex = 18
         GradeLabel.Text = "Grade"
         ' 
         ' AgeLabel
         ' 
         AgeLabel.AutoSize = True
-        AgeLabel.Location = New Point(241, 34)
+        AgeLabel.Location = New Point(211, 21)
         AgeLabel.Name = "AgeLabel"
-        AgeLabel.Size = New Size(36, 20)
+        AgeLabel.Size = New Size(28, 15)
         AgeLabel.TabIndex = 17
         AgeLabel.Text = "Age"
         ' 
         ' NameLabel
         ' 
         NameLabel.AutoSize = True
-        NameLabel.Location = New Point(6, 34)
+        NameLabel.Location = New Point(5, 21)
         NameLabel.Name = "NameLabel"
-        NameLabel.Size = New Size(49, 20)
+        NameLabel.Size = New Size(39, 15)
         NameLabel.TabIndex = 16
         NameLabel.Text = "Name"
         ' 
         ' GradeTextBox
         ' 
-        GradeTextBox.Location = New Point(310, 57)
+        GradeTextBox.Location = New Point(271, 38)
+        GradeTextBox.Margin = New Padding(3, 2, 3, 2)
         GradeTextBox.Name = "GradeTextBox"
-        GradeTextBox.Size = New Size(42, 27)
+        GradeTextBox.Size = New Size(37, 23)
         GradeTextBox.TabIndex = 2
         ' 
         ' CurrentMathProblemGroupBox
@@ -226,9 +242,11 @@ Partial Class MathContestForm
         CurrentMathProblemGroupBox.Controls.Add(FirstNumberTextBox)
         CurrentMathProblemGroupBox.Controls.Add(SecondNumberTextBox)
         CurrentMathProblemGroupBox.Controls.Add(StudentAnswerTextBox)
-        CurrentMathProblemGroupBox.Location = New Point(12, 109)
+        CurrentMathProblemGroupBox.Location = New Point(10, 82)
+        CurrentMathProblemGroupBox.Margin = New Padding(3, 2, 3, 2)
         CurrentMathProblemGroupBox.Name = "CurrentMathProblemGroupBox"
-        CurrentMathProblemGroupBox.Size = New Size(222, 209)
+        CurrentMathProblemGroupBox.Padding = New Padding(3, 2, 3, 2)
+        CurrentMathProblemGroupBox.Size = New Size(194, 162)
         CurrentMathProblemGroupBox.TabIndex = 15
         CurrentMathProblemGroupBox.TabStop = False
         CurrentMathProblemGroupBox.Text = "Current Math Problem"
@@ -236,27 +254,27 @@ Partial Class MathContestForm
         ' StudentAnswerLabel
         ' 
         StudentAnswerLabel.AutoSize = True
-        StudentAnswerLabel.Location = New Point(6, 152)
+        StudentAnswerLabel.Location = New Point(5, 114)
         StudentAnswerLabel.Name = "StudentAnswerLabel"
-        StudentAnswerLabel.Size = New Size(112, 20)
+        StudentAnswerLabel.Size = New Size(90, 15)
         StudentAnswerLabel.TabIndex = 21
         StudentAnswerLabel.Text = "Student Answer"
         ' 
         ' SecondNumberLabel
         ' 
         SecondNumberLabel.AutoSize = True
-        SecondNumberLabel.Location = New Point(6, 92)
+        SecondNumberLabel.Location = New Point(5, 69)
         SecondNumberLabel.Name = "SecondNumberLabel"
-        SecondNumberLabel.Size = New Size(92, 20)
+        SecondNumberLabel.Size = New Size(74, 15)
         SecondNumberLabel.TabIndex = 20
         SecondNumberLabel.Text = "2nd Number"
         ' 
         ' FirstNumberLabel
         ' 
         FirstNumberLabel.AutoSize = True
-        FirstNumberLabel.Location = New Point(6, 34)
+        FirstNumberLabel.Location = New Point(5, 26)
         FirstNumberLabel.Name = "FirstNumberLabel"
-        FirstNumberLabel.Size = New Size(86, 20)
+        FirstNumberLabel.Size = New Size(69, 15)
         FirstNumberLabel.TabIndex = 19
         FirstNumberLabel.Text = "1st Number"
         ' 
@@ -266,9 +284,11 @@ Partial Class MathContestForm
         MathProblemTypeGroupBox.Controls.Add(SubtractRadioButton)
         MathProblemTypeGroupBox.Controls.Add(MultiplyRadioButton)
         MathProblemTypeGroupBox.Controls.Add(DivideRadioButton)
-        MathProblemTypeGroupBox.Location = New Point(240, 109)
+        MathProblemTypeGroupBox.Location = New Point(210, 82)
+        MathProblemTypeGroupBox.Margin = New Padding(3, 2, 3, 2)
         MathProblemTypeGroupBox.Name = "MathProblemTypeGroupBox"
-        MathProblemTypeGroupBox.Size = New Size(152, 209)
+        MathProblemTypeGroupBox.Padding = New Padding(3, 2, 3, 2)
+        MathProblemTypeGroupBox.Size = New Size(133, 162)
         MathProblemTypeGroupBox.TabIndex = 16
         MathProblemTypeGroupBox.TabStop = False
         MathProblemTypeGroupBox.Text = "Math Problem Type"
@@ -279,23 +299,26 @@ Partial Class MathContestForm
         ButtonGroupBox.Controls.Add(SubmitButton)
         ButtonGroupBox.Controls.Add(SummaryButton)
         ButtonGroupBox.Controls.Add(ClearButton)
-        ButtonGroupBox.Location = New Point(398, 12)
+        ButtonGroupBox.Location = New Point(348, 9)
+        ButtonGroupBox.Margin = New Padding(3, 2, 3, 2)
         ButtonGroupBox.Name = "ButtonGroupBox"
-        ButtonGroupBox.Size = New Size(153, 306)
+        ButtonGroupBox.Padding = New Padding(3, 2, 3, 2)
+        ButtonGroupBox.Size = New Size(134, 235)
         ButtonGroupBox.TabIndex = 17
         ButtonGroupBox.TabStop = False
         ' 
         ' MathContestForm
         ' 
         AcceptButton = SubmitButton
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         CancelButton = ExitButton
-        ClientSize = New Size(564, 330)
+        ClientSize = New Size(494, 254)
         Controls.Add(StudentInformationGroupBox)
         Controls.Add(CurrentMathProblemGroupBox)
         Controls.Add(MathProblemTypeGroupBox)
         Controls.Add(ButtonGroupBox)
+        Margin = New Padding(3, 2, 3, 2)
         Name = "MathContestForm"
         Text = "Math Contest"
         StudentInformationGroupBox.ResumeLayout(False)

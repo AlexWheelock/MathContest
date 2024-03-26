@@ -8,11 +8,32 @@ Option Explicit On
 Option Strict On
 
 Public Class MathContestForm
-    Private Sub MathContestForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    'Clears everything and sets it back to default settings
+    Sub SetDefaults()
+        NameTextBox.Text = ""
+        FirstNumberTextBox.Text = ""
+        AgeTextBox.Text = ""
+        GradeTextBox.Text = ""
+        SecondNumberTextBox.Text = ""
+        StudentAnswerTextBox.Text = ""
+        AddRadioButton.Checked = True
+        SubtractRadioButton.Checked = False
+        MultiplyRadioButton.Checked = False
+        DivideRadioButton.Checked = False
     End Sub
 
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles NameTextBox.TextChanged
+
+
+
+    'Event handlers below this point
+
+
+    Private Sub MathContestForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        SetDefaults()
+    End Sub
+
+    Private Sub NameTextBox_TextChanged(sender As Object, e As EventArgs) Handles NameTextBox.TextChanged
 
     End Sub
 
@@ -73,19 +94,31 @@ Public Class MathContestForm
     End Sub
 
     Private Sub AddRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles AddRadioButton.CheckedChanged
-
+        AddRadioButton.Checked = True
+        SubtractRadioButton.Checked = False
+        MultiplyRadioButton.Checked = False
+        DivideRadioButton.Checked = False
     End Sub
 
     Private Sub SubtractRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles SubtractRadioButton.CheckedChanged
-
+        AddRadioButton.Checked = False
+        SubtractRadioButton.Checked = True
+        MultiplyRadioButton.Checked = False
+        DivideRadioButton.Checked = False
     End Sub
 
     Private Sub MultiplyRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles MultiplyRadioButton.CheckedChanged
-
+        AddRadioButton.Checked = False
+        SubtractRadioButton.Checked = False
+        MultiplyRadioButton.Checked = True
+        DivideRadioButton.Checked = False
     End Sub
 
     Private Sub DivideRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles DivideRadioButton.CheckedChanged
-
+        AddRadioButton.Checked = False
+        SubtractRadioButton.Checked = False
+        MultiplyRadioButton.Checked = False
+        DivideRadioButton.Checked = True
     End Sub
 
     Private Sub ButtonGroupBox_Enter(sender As Object, e As EventArgs) Handles ButtonGroupBox.Enter
@@ -97,7 +130,7 @@ Public Class MathContestForm
     End Sub
 
     Private Sub ClearButton_Click(sender As Object, e As EventArgs) Handles ClearButton.Click
-
+        SetDefaults()
     End Sub
 
     Private Sub SummaryButton_Click(sender As Object, e As EventArgs) Handles SummaryButton.Click
