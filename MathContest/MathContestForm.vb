@@ -40,17 +40,25 @@ Public Class MathContestForm
         Dim nameTest As Integer = 0
         Dim ageTest As Integer = 0
         Dim gradeTest As Integer = 0
-        Dim gradeString As String = ""
         Dim errorMessage As String = ("The following fields are invalid:" & vbCrLf _
             & vbCrLf)
 
-        'Tests to see if the name can be converted to a number, if so it flags it as an error, and adds it to the errorMessage
+        'Tests to see if the name can be converted to a number, if so it flags it as an error
+        'and adds it to the errorMessage
         Try
             nameTest = CInt(NameTextBox.Text)
             errorMessage += "Name"
             NameTextBox.Focus()
             validFields = False
         Catch ex As Exception
+            'Makes sure that something was put into NameTextBox, if not then it will flag it as an error
+            'and add it to the errorMessage
+            If NameTextBox.Text = "" Then
+                errorMessage += "Name"
+                NameTextBox.Focus()
+                validFields = False
+            Else
+            End If
         End Try
 
         'Validates the age, verifying that it is within 7-11 and a number
@@ -61,6 +69,10 @@ Public Class MathContestForm
             'Checks to see that the entered age number is between 7 and 11
             'If not, it will flag the age as an error, and add it to the errorMessage
             If ageTest < 7 Then
+                If validFields Then
+                    AgeTextBox.Focus()
+                Else
+                End If
                 validFields = False
                 If errorMessage <> ("The following fields are invalid:" & vbCrLf _
                 & vbCrLf) Then
@@ -69,6 +81,10 @@ Public Class MathContestForm
                     errorMessage += "Age is too low"
                 End If
             ElseIf ageTest > 11 Then
+                If validFields Then
+                    AgeTextBox.Focus()
+                Else
+                End If
                 validFields = False
                 If errorMessage <> ("The following fields are invalid:" & vbCrLf _
                 & vbCrLf) Then
@@ -82,6 +98,12 @@ Public Class MathContestForm
         Catch ex As Exception
             'If the entered age cannot be converted to an integer, then it will flag it as an error
             'Adds it to the errorMessage
+            'If validFields is already false, then it keeps the focus on the earlier invalid input
+            'else it will set the focus to the AgeTextBox upon failure.
+            If validFields Then
+                AgeTextBox.Focus()
+            Else
+            End If
             validFields = False
             If errorMessage <> ("The following fields are invalid:" & vbCrLf _
             & vbCrLf) Then
@@ -90,6 +112,62 @@ Public Class MathContestForm
                 errorMessage += "Age"
             End If
         End Try
+
+        Try
+            'Checks to see that the entered grade is a number
+            gradeTest = CInt(GradeTextBox.Text)
+
+            'Checks to see that the entered grade number is between 1 and 4
+            'If not, it will flag the grade as an error, and add it to the errorMessage
+            'If validFields is already false then it will keep the focus on the first earlier failed
+            'input, else it will set the focus to GradeTextBox upon failure.
+            If gradeTest < 1 Then
+                If validFields Then
+                    GradeTextBox.Focus()
+                Else
+                End If
+                validFields = False
+                If errorMessage <> ("The following fields are invalid:" & vbCrLf _
+                & vbCrLf) Then
+                    errorMessage += ", Grade is too low"
+                Else
+                    errorMessage += "Grade is too low"
+                End If
+            ElseIf gradeTest > 4 Then
+                If validFields Then
+                    GradeTextBox.Focus()
+                Else
+                End If
+                validFields = False
+                If errorMessage <> ("The following fields are invalid:" & vbCrLf _
+                & vbCrLf) Then
+                    errorMessage += ", Grade is too high"
+                Else
+                    errorMessage += "Grade is too high"
+                End If
+            Else
+            End If
+
+        Catch ex As Exception
+            'If the entered grade cannot be converted to an integer, then it will flag it as an error
+            'Adds it to the errorMessage
+            If validFields Then
+                GradeTextBox.Focus()
+            Else
+            End If
+            validFields = False
+            If errorMessage <> ("The following fields are invalid:" & vbCrLf _
+            & vbCrLf) Then
+                errorMessage += ", Grade"
+            Else
+                errorMessage += "Grade"
+            End If
+        End Try
+
+        If validFields = False Then
+            MsgBox(errorMessage)
+        Else
+        End If
 
         Return validFields
 
