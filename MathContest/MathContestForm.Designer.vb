@@ -22,6 +22,7 @@ Partial Class MathContestForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         NameTextBox = New TextBox()
         FirstNumberTextBox = New TextBox()
         SecondNumberTextBox = New TextBox()
@@ -46,6 +47,7 @@ Partial Class MathContestForm
         FirstNumberLabel = New Label()
         MathProblemTypeGroupBox = New GroupBox()
         ButtonGroupBox = New GroupBox()
+        MainToolTip = New ToolTip(components)
         StudentInformationGroupBox.SuspendLayout()
         CurrentMathProblemGroupBox.SuspendLayout()
         MathProblemTypeGroupBox.SuspendLayout()
@@ -307,6 +309,9 @@ Partial Class MathContestForm
         ButtonGroupBox.TabIndex = 17
         ButtonGroupBox.TabStop = False
         ' 
+        ' MainToolTip
+        ' 
+        ' 
         ' MathContestForm
         ' 
         AcceptButton = SubmitButton
@@ -355,5 +360,6 @@ Partial Class MathContestForm
     Friend WithEvents StudentAnswerLabel As Label
     Friend WithEvents SecondNumberLabel As Label
     Friend WithEvents FirstNumberLabel As Label
+    Friend WithEvents MainToolTip As ToolTip
 
 End Class

@@ -7,6 +7,17 @@
 Option Explicit On
 Option Strict On
 
+'TODO
+'[x] Create a sub to clear/set default settings
+'[ ] Validate the student information (Age must be 7-11, and Grade 1-4)
+'[ ] Generate pop-ups for invalid information
+'[ ] Clear invalid fields and set focus to those fields
+'[ ] Lock the student information in when validated
+'[ ] Generate two random numbers for each math problem
+'[ ] Create a way to handle the math problem type for the problems
+'[ ] Get the correct answer for the math problem
+'[ ] Check student answers, compare it to the correct answer
+'[ ] Run through 5 problems and give the score to the student
 Public Class MathContestForm
 
     'Clears everything and sets it back to default settings
@@ -140,4 +151,9 @@ Public Class MathContestForm
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
         Me.Close()
     End Sub
+
+    Private Sub MainToolTip_Popup(sender As Object, e As PopupEventArgs) Handles MainToolTip.Popup
+
+    End Sub
+
 End Class
