@@ -34,8 +34,66 @@ Public Class MathContestForm
         DivideRadioButton.Checked = False
     End Sub
 
+    'Validates the input student information when the submit button is pressed
+    Function ValidateStudentInformation() As Boolean
+        Dim validFields As Boolean = True
+        Dim nameTest As Integer = 0
+        Dim ageTest As Integer = 0
+        Dim gradeTest As Integer = 0
+        Dim gradeString As String = ""
+        Dim errorMessage As String = ("The following fields are invalid:" & vbCrLf _
+            & vbCrLf)
 
+        'Tests to see if the name can be converted to a number, if so it flags it as an error, and adds it to the errorMessage
+        Try
+            nameTest = CInt(NameTextBox.Text)
+            errorMessage += "Name"
+            NameTextBox.Focus()
+            validFields = False
+        Catch ex As Exception
+        End Try
 
+        'Validates the age, verifying that it is within 7-11 and a number
+        Try
+            'Checks to see that the entered age is a number
+            ageTest = CInt(AgeTextBox.Text)
+
+            'Checks to see that the entered age number is between 7 and 11
+            'If not, it will flag the age as an error, and add it to the errorMessage
+            If ageTest < 7 Then
+                validFields = False
+                If errorMessage <> ("The following fields are invalid:" & vbCrLf _
+                & vbCrLf) Then
+                    errorMessage += ", Age is too low"
+                Else
+                    errorMessage += "Age is too low"
+                End If
+            ElseIf ageTest > 11 Then
+                validFields = False
+                If errorMessage <> ("The following fields are invalid:" & vbCrLf _
+                & vbCrLf) Then
+                    errorMessage += ", Age is too high"
+                Else
+                    errorMessage += "Age is too high"
+                End If
+            Else
+            End If
+
+        Catch ex As Exception
+            'If the entered age cannot be converted to an integer, then it will flag it as an error
+            'Adds it to the errorMessage
+            validFields = False
+            If errorMessage <> ("The following fields are invalid:" & vbCrLf _
+            & vbCrLf) Then
+                errorMessage += ", Age"
+            Else
+                errorMessage += "Age"
+            End If
+        End Try
+
+        Return validFields
+
+    End Function
 
     'Event handlers below this point
 
@@ -137,7 +195,12 @@ Public Class MathContestForm
     End Sub
 
     Private Sub SubmitButton_Click(sender As Object, e As EventArgs) Handles SubmitButton.Click
+        'Checks the student information and validates it
+        'If valid then it will run through the rest of the subs, else it will do nothing
+        If ValidateStudentInformation() Then
 
+        Else
+        End If
     End Sub
 
     Private Sub ClearButton_Click(sender As Object, e As EventArgs) Handles ClearButton.Click
