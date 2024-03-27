@@ -17,10 +17,11 @@ Imports System.CodeDom.Compiler
 '[x] Clear invalid fields and set focus to those fields
 '[x] Lock the student information in when validated
 '[x] Generate two random numbers for each math problem
-'[ ] Create a way to handle the math problem type for the problems
-'[ ] Get the correct answer for the math problem
-'[ ] Check student answers, compare it to the correct answer
+'[x] Create a way to handle the math problem type for the problems
+'[x] Get the correct answer for the math problem
+'[x] Check student answers, compare it to the correct answer
 '[ ] Run through 5 problems and give the score to the student
+'[ ] Allow the student to check the amount of problems they have gotten right during the contest
 Public Class MathContestForm
 
     'Clears everything and sets it back to default settings
@@ -45,7 +46,7 @@ Public Class MathContestForm
     End Sub
 
     'Validates the input student information when the submit button is pressed
-    Function ValidateStudentInformation() As Boolean
+    Sub ValidateStudentInformation()
         Dim validFields As Boolean = True
         Dim nameTest As Integer = 0
         Dim ageTest As Integer = 0
@@ -162,21 +163,65 @@ Public Class MathContestForm
             DivideRadioButton.Enabled = False
             SubmitButton.Enabled = True
             SummaryButton.Enabled = True
+            StartContest()
         Else
         End If
 
-        Return validFields
-    End Function
+    End Sub
 
     Sub StartContest()
+        Dim answerTest As Integer
+        Dim problemNumber As Integer
 
-        For problem = 1 To 5
-            FirstNumberTextBox.Text = GenerateNumber()
-            SecondNumberTextBox.Text = GenerateNumber()
+        FirstNumberTextBox.Text = GenerateNumber()
+        SecondNumberTextBox.Text = GenerateNumber()
 
-        Next
+        Try
+            answerTest = CInt(StudentAnswerTextBox.Text)
+            StudentAnswerTextBox.BackColor = Color.White
+            problemNumber += 1
+            If CheckAnswer() Then
 
+            End If
+        Catch ex As Exception
+            StudentAnswerTextBox.Text = ""
+            StudentAnswerTextBox.BackColor = Color.LightYellow
+            MsgBox("Please enter a whole number.")
+        End Try
     End Sub
+
+    Function CheckAnswer() As Boolean
+        Dim correctAnswer As Boolean
+        Dim answer As Integer
+        Dim firstNumber As Integer = CInt(FirstNumberTextBox.Text)
+        Dim secondNumber As Integer = CInt(SecondNumberTextBox.Text)
+
+        If AddRadioButton.Checked Then
+            answer = (firstNumber + secondNumber)
+        ElseIf SubtractRadioButton.Checked Then
+            answer = (firstNumber - secondNumber)
+        ElseIf MultiplyRadioButton.Checked Then
+            answer = (firstNumber * secondNumber)
+        ElseIf DivideRadioButton.Checked Then
+            answer = (firstNumber \ secondNumber)
+        End If
+
+        If answer = CInt(StudentAnswerTextBox.Text) Then
+            correctAnswer = True
+            MsgBox("Your answer was correct!" & vbCrLf _
+                   & vbCrLf _
+                   & $"The correct answer was {answer}.")
+        Else
+            correctAnswer = False
+            MsgBox("Your answer was incorrect." & vbCrLf _
+                   & vbCrLf _
+                   & $"The correct answer was {answer}.")
+        End If
+
+
+
+        Return correctAnswer
+    End Function
 
     Function GenerateNumber() As String
         Dim number As Integer
