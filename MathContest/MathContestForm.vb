@@ -1,11 +1,11 @@
-﻿Option Explicit On
-Option Strict On
-'Alex Wheelock
+﻿'Alex Wheelock
 'RCET 0265
 'Spring 2024
 'Math Contest
 'https://github.com/AlexWheelock/MathContest.git
 
+Option Explicit On
+Option Strict On
 Imports System.CodeDom.Compiler
 
 
