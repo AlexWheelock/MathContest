@@ -50,26 +50,25 @@ Public Class MathContestForm
         Dim nameTest As Integer = 0
         Dim ageTest As Integer = 0
         Dim gradeTest As Integer = 0
-        Dim errorMessage As String = ("The following fields are invalid:" & vbCrLf _
-            & vbCrLf)
 
         'Tests to see if the name can be converted to a number, if so it flags it as an error
         'and adds it to the errorMessage
         Try
             nameTest = CInt(NameTextBox.Text)
-            errorMessage += "Name"
             NameTextBox.Text = ""
             NameTextBox.Focus()
             validFields = False
+            NameTextBox.BackColor = Color.LightYellow
         Catch ex As Exception
             'Makes sure that something was put into NameTextBox, if not then it will flag it as an error
             'and add it to the errorMessage
             If NameTextBox.Text = "" Then
-                errorMessage += "Name"
                 NameTextBox.Text = ""
                 NameTextBox.Focus()
                 validFields = False
+                NameTextBox.BackColor = Color.LightYellow
             Else
+                NameTextBox.BackColor = Color.White
             End If
         End Try
 
@@ -87,12 +86,7 @@ Public Class MathContestForm
                 End If
                 AgeTextBox.Text = ""
                 validFields = False
-                If errorMessage <> ("The following fields are invalid:" & vbCrLf _
-                & vbCrLf) Then
-                    errorMessage += ", Age is too low"
-                Else
-                    errorMessage += "Age is too low"
-                End If
+                AgeTextBox.BackColor = Color.LightYellow
             ElseIf ageTest > 11 Then
                 If validFields Then
                     AgeTextBox.Focus()
@@ -100,13 +94,9 @@ Public Class MathContestForm
                 End If
                 AgeTextBox.Text = ""
                 validFields = False
-                If errorMessage <> ("The following fields are invalid:" & vbCrLf _
-                & vbCrLf) Then
-                    errorMessage += ", Age is too high"
-                Else
-                    errorMessage += "Age is too high"
-                End If
+                AgeTextBox.BackColor = Color.LightYellow
             Else
+                AgeTextBox.BackColor = Color.White
             End If
         Catch ex As Exception
             'If the entered age cannot be converted to an integer, then it will flag it as an error
@@ -119,12 +109,7 @@ Public Class MathContestForm
             End If
             AgeTextBox.Text = ""
             validFields = False
-            If errorMessage <> ("The following fields are invalid:" & vbCrLf _
-            & vbCrLf) Then
-                errorMessage += ", Age"
-            Else
-                errorMessage += "Age"
-            End If
+            AgeTextBox.BackColor = Color.LightYellow
         End Try
 
         Try
@@ -142,12 +127,7 @@ Public Class MathContestForm
                 End If
                 GradeTextBox.Text = ""
                 validFields = False
-                If errorMessage <> ("The following fields are invalid:" & vbCrLf _
-                & vbCrLf) Then
-                    errorMessage += ", Grade is too low"
-                Else
-                    errorMessage += "Grade is too low"
-                End If
+                GradeTextBox.BackColor = Color.LightYellow
             ElseIf gradeTest > 4 Then
                 If validFields Then
                     GradeTextBox.Focus()
@@ -155,13 +135,9 @@ Public Class MathContestForm
                 End If
                 GradeTextBox.Text = ""
                 validFields = False
-                If errorMessage <> ("The following fields are invalid:" & vbCrLf _
-                & vbCrLf) Then
-                    errorMessage += ", Grade is too high"
-                Else
-                    errorMessage += "Grade is too high"
-                End If
+                GradeTextBox.BackColor = Color.LightYellow
             Else
+                GradeTextBox.BackColor = Color.White
             End If
 
         Catch ex As Exception
@@ -173,17 +149,10 @@ Public Class MathContestForm
             End If
             GradeTextBox.Text = ""
             validFields = False
-            If errorMessage <> ("The following fields are invalid:" & vbCrLf _
-            & vbCrLf) Then
-                errorMessage += ", Grade"
-            Else
-                errorMessage += "Grade"
-            End If
+            GradeTextBox.BackColor = Color.LightYellow
         End Try
 
-        If validFields = False Then
-            MsgBox(errorMessage)
-        Else
+        If validFields = True Then
             NameTextBox.Enabled = False
             AgeTextBox.Enabled = False
             GradeTextBox.Enabled = False
@@ -191,6 +160,9 @@ Public Class MathContestForm
             SubtractRadioButton.Enabled = False
             MultiplyRadioButton.Enabled = False
             DivideRadioButton.Enabled = False
+            SubmitButton.Enabled = True
+            SummaryButton.Enabled = True
+        Else
         End If
 
         Return validFields
@@ -306,12 +278,7 @@ Public Class MathContestForm
     End Sub
 
     Private Sub SubmitButton_Click(sender As Object, e As EventArgs) Handles SubmitButton.Click
-        'Checks the student information and validates it
-        'If valid then it will run through the rest of the subs, else it will do nothing
-        If ValidateStudentInformation() Then
-            StartContest()
-        Else
-        End If
+        StartContest()
     End Sub
 
     Private Sub ClearButton_Click(sender As Object, e As EventArgs) Handles ClearButton.Click
