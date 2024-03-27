@@ -1,18 +1,21 @@
-﻿'Alex Wheelock
+﻿Option Explicit On
+Option Strict On
+'Alex Wheelock
 'RCET 0265
 'Spring 2024
 'Math Contest
 'https://github.com/AlexWheelock/MathContest.git
 
-Option Explicit On
-Option Strict On
+Imports System.CodeDom.Compiler
+
+
 
 'TODO
 '[x] Create a sub to clear/set default settings
 '[x] Validate the student information (Age must be 7-11, and Grade 1-4)
 '[x] Generate pop-ups for invalid information
 '[x] Clear invalid fields and set focus to those fields
-'[ ] Lock the student information in when validated
+'[x] Lock the student information in when validated
 '[ ] Generate two random numbers for each math problem
 '[ ] Create a way to handle the math problem type for the problems
 '[ ] Get the correct answer for the math problem
@@ -174,14 +177,24 @@ Public Class MathContestForm
         If validFields = False Then
             MsgBox(errorMessage)
         Else
+            NameTextBox.Enabled = False
+            AgeTextBox.Enabled = False
+            GradeTextBox.Enabled = False
+            AddRadioButton.Enabled = False
+            SubtractRadioButton.Enabled = False
+            MultiplyRadioButton.Enabled = False
+            DivideRadioButton.Enabled = False
         End If
 
         Return validFields
-
     End Function
 
-    'Event handlers below this point
+    Sub StartContest()
 
+    End Sub
+
+
+    'Event handlers below this point
 
     Private Sub MathContestForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SetDefaults()
@@ -248,31 +261,19 @@ Public Class MathContestForm
     End Sub
 
     Private Sub AddRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles AddRadioButton.CheckedChanged
-        AddRadioButton.Checked = True
-        SubtractRadioButton.Checked = False
-        MultiplyRadioButton.Checked = False
-        DivideRadioButton.Checked = False
+
     End Sub
 
     Private Sub SubtractRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles SubtractRadioButton.CheckedChanged
-        AddRadioButton.Checked = False
-        SubtractRadioButton.Checked = True
-        MultiplyRadioButton.Checked = False
-        DivideRadioButton.Checked = False
+
     End Sub
 
     Private Sub MultiplyRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles MultiplyRadioButton.CheckedChanged
-        AddRadioButton.Checked = False
-        SubtractRadioButton.Checked = False
-        MultiplyRadioButton.Checked = True
-        DivideRadioButton.Checked = False
+
     End Sub
 
     Private Sub DivideRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles DivideRadioButton.CheckedChanged
-        AddRadioButton.Checked = False
-        SubtractRadioButton.Checked = False
-        MultiplyRadioButton.Checked = False
-        DivideRadioButton.Checked = True
+
     End Sub
 
     Private Sub ButtonGroupBox_Enter(sender As Object, e As EventArgs) Handles ButtonGroupBox.Enter
@@ -283,7 +284,7 @@ Public Class MathContestForm
         'Checks the student information and validates it
         'If valid then it will run through the rest of the subs, else it will do nothing
         If ValidateStudentInformation() Then
-
+            StartContest()
         Else
         End If
     End Sub

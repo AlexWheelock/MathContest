@@ -99,6 +99,7 @@ Partial Class MathContestForm
         ' AddRadioButton
         ' 
         AddRadioButton.AutoSize = True
+        AddRadioButton.Checked = True
         AddRadioButton.Location = New Point(11, 26)
         AddRadioButton.Margin = New Padding(3, 2, 3, 2)
         AddRadioButton.Name = "AddRadioButton"
@@ -116,7 +117,6 @@ Partial Class MathContestForm
         SubtractRadioButton.Name = "SubtractRadioButton"
         SubtractRadioButton.Size = New Size(69, 19)
         SubtractRadioButton.TabIndex = 7
-        SubtractRadioButton.TabStop = True
         SubtractRadioButton.Text = "Subtract"
         SubtractRadioButton.UseVisualStyleBackColor = True
         ' 
@@ -128,7 +128,6 @@ Partial Class MathContestForm
         MultiplyRadioButton.Name = "MultiplyRadioButton"
         MultiplyRadioButton.Size = New Size(69, 19)
         MultiplyRadioButton.TabIndex = 8
-        MultiplyRadioButton.TabStop = True
         MultiplyRadioButton.Text = "Multiply"
         MultiplyRadioButton.UseVisualStyleBackColor = True
         ' 
@@ -140,7 +139,6 @@ Partial Class MathContestForm
         DivideRadioButton.Name = "DivideRadioButton"
         DivideRadioButton.Size = New Size(58, 19)
         DivideRadioButton.TabIndex = 9
-        DivideRadioButton.TabStop = True
         DivideRadioButton.Text = "Divide"
         DivideRadioButton.UseVisualStyleBackColor = True
         ' 
