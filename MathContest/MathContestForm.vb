@@ -9,9 +9,9 @@ Option Strict On
 
 'TODO
 '[x] Create a sub to clear/set default settings
-'[ ] Validate the student information (Age must be 7-11, and Grade 1-4)
-'[ ] Generate pop-ups for invalid information
-'[ ] Clear invalid fields and set focus to those fields
+'[x] Validate the student information (Age must be 7-11, and Grade 1-4)
+'[x] Generate pop-ups for invalid information
+'[x] Clear invalid fields and set focus to those fields
 '[ ] Lock the student information in when validated
 '[ ] Generate two random numbers for each math problem
 '[ ] Create a way to handle the math problem type for the problems
@@ -48,6 +48,7 @@ Public Class MathContestForm
         Try
             nameTest = CInt(NameTextBox.Text)
             errorMessage += "Name"
+            NameTextBox.Text = ""
             NameTextBox.Focus()
             validFields = False
         Catch ex As Exception
@@ -55,6 +56,7 @@ Public Class MathContestForm
             'and add it to the errorMessage
             If NameTextBox.Text = "" Then
                 errorMessage += "Name"
+                NameTextBox.Text = ""
                 NameTextBox.Focus()
                 validFields = False
             Else
@@ -73,6 +75,7 @@ Public Class MathContestForm
                     AgeTextBox.Focus()
                 Else
                 End If
+                AgeTextBox.Text = ""
                 validFields = False
                 If errorMessage <> ("The following fields are invalid:" & vbCrLf _
                 & vbCrLf) Then
@@ -85,6 +88,7 @@ Public Class MathContestForm
                     AgeTextBox.Focus()
                 Else
                 End If
+                AgeTextBox.Text = ""
                 validFields = False
                 If errorMessage <> ("The following fields are invalid:" & vbCrLf _
                 & vbCrLf) Then
@@ -94,7 +98,6 @@ Public Class MathContestForm
                 End If
             Else
             End If
-
         Catch ex As Exception
             'If the entered age cannot be converted to an integer, then it will flag it as an error
             'Adds it to the errorMessage
@@ -104,6 +107,7 @@ Public Class MathContestForm
                 AgeTextBox.Focus()
             Else
             End If
+            AgeTextBox.Text = ""
             validFields = False
             If errorMessage <> ("The following fields are invalid:" & vbCrLf _
             & vbCrLf) Then
@@ -126,6 +130,7 @@ Public Class MathContestForm
                     GradeTextBox.Focus()
                 Else
                 End If
+                GradeTextBox.Text = ""
                 validFields = False
                 If errorMessage <> ("The following fields are invalid:" & vbCrLf _
                 & vbCrLf) Then
@@ -138,6 +143,7 @@ Public Class MathContestForm
                     GradeTextBox.Focus()
                 Else
                 End If
+                GradeTextBox.Text = ""
                 validFields = False
                 If errorMessage <> ("The following fields are invalid:" & vbCrLf _
                 & vbCrLf) Then
@@ -155,6 +161,7 @@ Public Class MathContestForm
                 GradeTextBox.Focus()
             Else
             End If
+            GradeTextBox.Text = ""
             validFields = False
             If errorMessage <> ("The following fields are invalid:" & vbCrLf _
             & vbCrLf) Then
