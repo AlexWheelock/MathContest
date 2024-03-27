@@ -94,6 +94,7 @@ Partial Class MathContestForm
         ' 
         AgeTextBox.Location = New Point(211, 38)
         AgeTextBox.Margin = New Padding(3, 2, 3, 2)
+        AgeTextBox.MaxLength = 2
         AgeTextBox.Name = "AgeTextBox"
         AgeTextBox.Size = New Size(37, 23)
         AgeTextBox.TabIndex = 1
@@ -146,12 +147,13 @@ Partial Class MathContestForm
         ' 
         ' SubmitButton
         ' 
+        SubmitButton.Enabled = False
         SubmitButton.Location = New Point(4, 17)
         SubmitButton.Margin = New Padding(3, 2, 3, 2)
         SubmitButton.Name = "SubmitButton"
         SubmitButton.Size = New Size(124, 44)
         SubmitButton.TabIndex = 8
-        SubmitButton.Text = "Submit"
+        SubmitButton.Text = "&Submit"
         SubmitButton.UseVisualStyleBackColor = True
         ' 
         ' ClearButton
@@ -161,17 +163,18 @@ Partial Class MathContestForm
         ClearButton.Name = "ClearButton"
         ClearButton.Size = New Size(124, 44)
         ClearButton.TabIndex = 9
-        ClearButton.Text = "Clear"
+        ClearButton.Text = "&Clear"
         ClearButton.UseVisualStyleBackColor = True
         ' 
         ' SummaryButton
         ' 
+        SummaryButton.Enabled = False
         SummaryButton.Location = New Point(5, 113)
         SummaryButton.Margin = New Padding(3, 2, 3, 2)
         SummaryButton.Name = "SummaryButton"
         SummaryButton.Size = New Size(124, 44)
         SummaryButton.TabIndex = 10
-        SummaryButton.Text = "Summary"
+        SummaryButton.Text = "S&ummary"
         SummaryButton.UseVisualStyleBackColor = True
         ' 
         ' ExitButton
@@ -181,7 +184,7 @@ Partial Class MathContestForm
         ExitButton.Name = "ExitButton"
         ExitButton.Size = New Size(124, 44)
         ExitButton.TabIndex = 11
-        ExitButton.Text = "Exit"
+        ExitButton.Text = "E&xit"
         ExitButton.UseVisualStyleBackColor = True
         ' 
         ' StudentInformationGroupBox
@@ -232,6 +235,7 @@ Partial Class MathContestForm
         ' 
         GradeTextBox.Location = New Point(271, 38)
         GradeTextBox.Margin = New Padding(3, 2, 3, 2)
+        GradeTextBox.MaxLength = 1
         GradeTextBox.Name = "GradeTextBox"
         GradeTextBox.Size = New Size(37, 23)
         GradeTextBox.TabIndex = 2

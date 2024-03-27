@@ -25,16 +25,23 @@ Public Class MathContestForm
 
     'Clears everything and sets it back to default settings
     Sub SetDefaults()
-        NameTextBox.Text = ""
-        FirstNumberTextBox.Text = ""
-        AgeTextBox.Text = ""
-        GradeTextBox.Text = ""
-        SecondNumberTextBox.Text = ""
-        StudentAnswerTextBox.Text = ""
-        AddRadioButton.Checked = True
-        SubtractRadioButton.Checked = False
-        MultiplyRadioButton.Checked = False
-        DivideRadioButton.Checked = False
+        If NameTextBox.Enabled = True Then
+            NameTextBox.Text = ""
+            FirstNumberTextBox.Text = ""
+            AgeTextBox.Text = ""
+            GradeTextBox.Text = ""
+            SecondNumberTextBox.Text = ""
+            StudentAnswerTextBox.Text = ""
+            AddRadioButton.Checked = True
+            SubtractRadioButton.Checked = False
+            MultiplyRadioButton.Checked = False
+            DivideRadioButton.Checked = False
+            SubmitButton.Enabled = False
+            SummaryButton.Enabled = False
+        Else
+            StudentAnswerTextBox.Text = ""
+        End If
+
     End Sub
 
     'Validates the input student information when the submit button is pressed
@@ -323,4 +330,7 @@ Public Class MathContestForm
 
     End Sub
 
+    Private Sub NameTextBox_Leave(sender As Object, e As EventArgs) Handles NameTextBox.Leave, AgeTextBox.Leave, GradeTextBox.Leave
+        ValidateStudentInformation()
+    End Sub
 End Class
