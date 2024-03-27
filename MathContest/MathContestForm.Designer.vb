@@ -70,6 +70,7 @@ Partial Class MathContestForm
         FirstNumberTextBox.ReadOnly = True
         FirstNumberTextBox.Size = New Size(183, 23)
         FirstNumberTextBox.TabIndex = 3
+        FirstNumberTextBox.TabStop = False
         ' 
         ' SecondNumberTextBox
         ' 
@@ -79,6 +80,7 @@ Partial Class MathContestForm
         SecondNumberTextBox.ReadOnly = True
         SecondNumberTextBox.Size = New Size(183, 23)
         SecondNumberTextBox.TabIndex = 4
+        SecondNumberTextBox.TabStop = False
         ' 
         ' StudentAnswerTextBox
         ' 
@@ -86,7 +88,7 @@ Partial Class MathContestForm
         StudentAnswerTextBox.Margin = New Padding(3, 2, 3, 2)
         StudentAnswerTextBox.Name = "StudentAnswerTextBox"
         StudentAnswerTextBox.Size = New Size(183, 23)
-        StudentAnswerTextBox.TabIndex = 5
+        StudentAnswerTextBox.TabIndex = 3
         ' 
         ' AgeTextBox
         ' 
@@ -104,7 +106,7 @@ Partial Class MathContestForm
         AddRadioButton.Margin = New Padding(3, 2, 3, 2)
         AddRadioButton.Name = "AddRadioButton"
         AddRadioButton.Size = New Size(47, 19)
-        AddRadioButton.TabIndex = 6
+        AddRadioButton.TabIndex = 4
         AddRadioButton.TabStop = True
         AddRadioButton.Text = "Add"
         AddRadioButton.UseVisualStyleBackColor = True
@@ -116,7 +118,7 @@ Partial Class MathContestForm
         SubtractRadioButton.Margin = New Padding(3, 2, 3, 2)
         SubtractRadioButton.Name = "SubtractRadioButton"
         SubtractRadioButton.Size = New Size(69, 19)
-        SubtractRadioButton.TabIndex = 7
+        SubtractRadioButton.TabIndex = 5
         SubtractRadioButton.Text = "Subtract"
         SubtractRadioButton.UseVisualStyleBackColor = True
         ' 
@@ -127,7 +129,7 @@ Partial Class MathContestForm
         MultiplyRadioButton.Margin = New Padding(3, 2, 3, 2)
         MultiplyRadioButton.Name = "MultiplyRadioButton"
         MultiplyRadioButton.Size = New Size(69, 19)
-        MultiplyRadioButton.TabIndex = 8
+        MultiplyRadioButton.TabIndex = 6
         MultiplyRadioButton.Text = "Multiply"
         MultiplyRadioButton.UseVisualStyleBackColor = True
         ' 
@@ -138,7 +140,7 @@ Partial Class MathContestForm
         DivideRadioButton.Margin = New Padding(3, 2, 3, 2)
         DivideRadioButton.Name = "DivideRadioButton"
         DivideRadioButton.Size = New Size(58, 19)
-        DivideRadioButton.TabIndex = 9
+        DivideRadioButton.TabIndex = 7
         DivideRadioButton.Text = "Divide"
         DivideRadioButton.UseVisualStyleBackColor = True
         ' 
@@ -148,7 +150,7 @@ Partial Class MathContestForm
         SubmitButton.Margin = New Padding(3, 2, 3, 2)
         SubmitButton.Name = "SubmitButton"
         SubmitButton.Size = New Size(124, 44)
-        SubmitButton.TabIndex = 10
+        SubmitButton.TabIndex = 8
         SubmitButton.Text = "Submit"
         SubmitButton.UseVisualStyleBackColor = True
         ' 
@@ -158,7 +160,7 @@ Partial Class MathContestForm
         ClearButton.Margin = New Padding(3, 2, 3, 2)
         ClearButton.Name = "ClearButton"
         ClearButton.Size = New Size(124, 44)
-        ClearButton.TabIndex = 11
+        ClearButton.TabIndex = 9
         ClearButton.Text = "Clear"
         ClearButton.UseVisualStyleBackColor = True
         ' 
@@ -168,7 +170,7 @@ Partial Class MathContestForm
         SummaryButton.Margin = New Padding(3, 2, 3, 2)
         SummaryButton.Name = "SummaryButton"
         SummaryButton.Size = New Size(124, 44)
-        SummaryButton.TabIndex = 12
+        SummaryButton.TabIndex = 10
         SummaryButton.Text = "Summary"
         SummaryButton.UseVisualStyleBackColor = True
         ' 
@@ -178,7 +180,7 @@ Partial Class MathContestForm
         ExitButton.Margin = New Padding(3, 2, 3, 2)
         ExitButton.Name = "ExitButton"
         ExitButton.Size = New Size(124, 44)
-        ExitButton.TabIndex = 13
+        ExitButton.TabIndex = 11
         ExitButton.Text = "Exit"
         ExitButton.UseVisualStyleBackColor = True
         ' 

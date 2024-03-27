@@ -16,7 +16,7 @@ Imports System.CodeDom.Compiler
 '[x] Generate pop-ups for invalid information
 '[x] Clear invalid fields and set focus to those fields
 '[x] Lock the student information in when validated
-'[ ] Generate two random numbers for each math problem
+'[x] Generate two random numbers for each math problem
 '[ ] Create a way to handle the math problem type for the problems
 '[ ] Get the correct answer for the math problem
 '[ ] Check student answers, compare it to the correct answer
@@ -191,8 +191,26 @@ Public Class MathContestForm
 
     Sub StartContest()
 
+        For problem = 1 To 5
+            FirstNumberTextBox.Text = GenerateNumber()
+            SecondNumberTextBox.Text = GenerateNumber()
+
+        Next
+
     End Sub
 
+    Function GenerateNumber() As String
+        Dim number As Integer
+
+        Randomize()
+        number = CInt(Rnd() * 100)
+
+        Return CStr(number)
+    End Function
+
+    Sub SolveProblem()
+
+    End Sub
 
     'Event handlers below this point
 
