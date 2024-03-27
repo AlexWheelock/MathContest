@@ -7,6 +7,7 @@
 Option Explicit On
 Option Strict On
 Imports System.CodeDom.Compiler
+Imports System.Security.Cryptography.X509Certificates
 
 
 
@@ -172,6 +173,7 @@ Public Class MathContestForm
     Sub StartContest()
         Dim answerTest As Integer
         Dim problemNumber As Integer
+        Dim trackScore As Integer
 
         FirstNumberTextBox.Text = GenerateNumber()
         SecondNumberTextBox.Text = GenerateNumber()
@@ -181,12 +183,20 @@ Public Class MathContestForm
             StudentAnswerTextBox.BackColor = Color.White
             problemNumber += 1
             If CheckAnswer() Then
-
+                trackScore += 1
+            Else
             End If
         Catch ex As Exception
-            StudentAnswerTextBox.Text = ""
-            StudentAnswerTextBox.BackColor = Color.LightYellow
-            MsgBox("Please enter a whole number.")
+            If StudentAnswerTextBox.Text = "" Then
+                StudentAnswerTextBox.Text = ""
+                StudentAnswerTextBox.BackColor = Color.LightYellow
+                MsgBox("Please enter an answer.")
+            Else
+                StudentAnswerTextBox.Text = ""
+                StudentAnswerTextBox.BackColor = Color.LightYellow
+                MsgBox("Please enter a whole number.")
+            End If
+
         End Try
     End Sub
 
@@ -218,10 +228,12 @@ Public Class MathContestForm
                    & $"The correct answer was {answer}.")
         End If
 
-
-
         Return correctAnswer
     End Function
+
+    Sub Summary()
+        MsgBox($"{NameTextBox.Text} has a score of ")
+    End Sub
 
     Function GenerateNumber() As String
         Dim number As Integer
@@ -331,7 +343,7 @@ Public Class MathContestForm
     End Sub
 
     Private Sub SummaryButton_Click(sender As Object, e As EventArgs) Handles SummaryButton.Click
-
+        Summary()
     End Sub
 
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
