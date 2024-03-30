@@ -214,6 +214,7 @@ Public Class MathContestForm
                 problemNumber = 0
                 trackScore = 0
                 ValidateStudentInformation(True)
+                NameTextBox.Enabled = True
                 SetDefaults()
             Else
                 StudentAnswerTextBox.Text = ""

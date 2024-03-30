@@ -61,6 +61,7 @@ Partial Class MathContestForm
         NameTextBox.Name = "NameTextBox"
         NameTextBox.Size = New Size(183, 23)
         NameTextBox.TabIndex = 0
+        MainToolTip.SetToolTip(NameTextBox, "Please enter the student's name.")
         ' 
         ' FirstNumberTextBox
         ' 
@@ -89,6 +90,7 @@ Partial Class MathContestForm
         StudentAnswerTextBox.Name = "StudentAnswerTextBox"
         StudentAnswerTextBox.Size = New Size(183, 23)
         StudentAnswerTextBox.TabIndex = 3
+        MainToolTip.SetToolTip(StudentAnswerTextBox, "Please enter an answer as a whole number")
         ' 
         ' AgeTextBox
         ' 
@@ -98,6 +100,7 @@ Partial Class MathContestForm
         AgeTextBox.Name = "AgeTextBox"
         AgeTextBox.Size = New Size(37, 23)
         AgeTextBox.TabIndex = 1
+        MainToolTip.SetToolTip(AgeTextBox, "Please enter the student's age." & vbCrLf & vbCrLf & "Age must be between 7-11 years old.")
         ' 
         ' AddRadioButton
         ' 
@@ -110,6 +113,7 @@ Partial Class MathContestForm
         AddRadioButton.TabIndex = 4
         AddRadioButton.TabStop = True
         AddRadioButton.Text = "Add"
+        MainToolTip.SetToolTip(AddRadioButton, "Click for an addition problem")
         AddRadioButton.UseVisualStyleBackColor = True
         ' 
         ' SubtractRadioButton
@@ -121,6 +125,7 @@ Partial Class MathContestForm
         SubtractRadioButton.Size = New Size(69, 19)
         SubtractRadioButton.TabIndex = 5
         SubtractRadioButton.Text = "Subtract"
+        MainToolTip.SetToolTip(SubtractRadioButton, "Click for a subtraction problem")
         SubtractRadioButton.UseVisualStyleBackColor = True
         ' 
         ' MultiplyRadioButton
@@ -132,6 +137,7 @@ Partial Class MathContestForm
         MultiplyRadioButton.Size = New Size(69, 19)
         MultiplyRadioButton.TabIndex = 6
         MultiplyRadioButton.Text = "Multiply"
+        MainToolTip.SetToolTip(MultiplyRadioButton, "Click for a multiplication problem")
         MultiplyRadioButton.UseVisualStyleBackColor = True
         ' 
         ' DivideRadioButton
@@ -143,6 +149,7 @@ Partial Class MathContestForm
         DivideRadioButton.Size = New Size(58, 19)
         DivideRadioButton.TabIndex = 7
         DivideRadioButton.Text = "Divide"
+        MainToolTip.SetToolTip(DivideRadioButton, "Click here for a division problem")
         DivideRadioButton.UseVisualStyleBackColor = True
         ' 
         ' SubmitButton
@@ -154,6 +161,7 @@ Partial Class MathContestForm
         SubmitButton.Size = New Size(124, 44)
         SubmitButton.TabIndex = 8
         SubmitButton.Text = "&Submit"
+        MainToolTip.SetToolTip(SubmitButton, "Submit answer")
         SubmitButton.UseVisualStyleBackColor = True
         ' 
         ' ClearButton
@@ -164,6 +172,7 @@ Partial Class MathContestForm
         ClearButton.Size = New Size(124, 44)
         ClearButton.TabIndex = 9
         ClearButton.Text = "&Clear"
+        MainToolTip.SetToolTip(ClearButton, "Clear all fields" & vbCrLf & vbCrLf & "Will only clear student answer during contest")
         ClearButton.UseVisualStyleBackColor = True
         ' 
         ' SummaryButton
@@ -175,6 +184,7 @@ Partial Class MathContestForm
         SummaryButton.Size = New Size(124, 44)
         SummaryButton.TabIndex = 10
         SummaryButton.Text = "S&ummary"
+        MainToolTip.SetToolTip(SummaryButton, "Click to display the current score")
         SummaryButton.UseVisualStyleBackColor = True
         ' 
         ' ExitButton
@@ -185,6 +195,7 @@ Partial Class MathContestForm
         ExitButton.Size = New Size(124, 44)
         ExitButton.TabIndex = 11
         ExitButton.Text = "E&xit"
+        MainToolTip.SetToolTip(ExitButton, "Click to close this form")
         ExitButton.UseVisualStyleBackColor = True
         ' 
         ' StudentInformationGroupBox
@@ -239,6 +250,7 @@ Partial Class MathContestForm
         GradeTextBox.Name = "GradeTextBox"
         GradeTextBox.Size = New Size(37, 23)
         GradeTextBox.TabIndex = 2
+        MainToolTip.SetToolTip(GradeTextBox, "Please enter the student's grade number" & vbCrLf & vbCrLf & "Grade must be between 1-4")
         ' 
         ' CurrentMathProblemGroupBox
         ' 
